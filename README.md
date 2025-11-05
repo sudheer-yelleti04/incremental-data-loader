@@ -6,11 +6,9 @@ This project automates a Change Data Capture (CDC) pipeline using Python and Exc
 
 The pipeline reads new raw data files (Excel), tracks changes using Status Flags (I, U, D) and Timestamps, and maintains:
 
-a CDC Layer (latest snapshot)
-
-a Historic Layer (complete history of all events)
-
-a Backup Layer (archive of processed raw files)
+*a CDC Layer (latest snapshot)
+*a Historic Layer (complete history of all events)
+*a Backup Layer (archive of processed raw files)
 
 Each new raw file is automatically processed, appended to history, compared against existing data, and the latest CDC snapshot is updated.
 

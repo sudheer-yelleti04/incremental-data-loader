@@ -1,9 +1,9 @@
-🧩 Excel CDC Automation ⚙️
+>🧩 Excel CDC Automation ⚙️
 
-> 🔁 A Python-based Change Data Capture (CDC) pipeline that tracks Insert (I), Update (U), and Delete (D) operations from Excel files.
-> 📊 Automatically maintains a Historic Layer for all events, a CDC Layer for the latest snapshot, and archives processed raw files into a Archive Layer.
+🔁 A Python-based Change Data Capture (CDC) pipeline that tracks Insert (I), Update (U), and Delete (D) operations from Excel files.
+📊 Automatically maintains a Historic Layer for all events, a CDC Layer for the latest snapshot, and archives processed raw files into a Archive Layer.
 
-🪄 Project Overview
+>🪄 Project Overview
 
 This project demonstrates a Change Data Capture (CDC) workflow using Python + Pandas + Excel.
 It helps track evolving datasets, detect changes, and keep both:
@@ -15,19 +15,12 @@ Designed as a lightweight, Excel-based CDC framework — great for ETL learning,
 
 🏗️ Folder Structure
 
-📦 excel-cdc-automation
-│
-├── 📁 raw_folder/          → Incoming raw Excel files (new data)
-├── 📁 historic_folder/     → Stores all cumulative history (historic_data.xlsx)
-├── 📁 cdc_folder/          → Always holds the latest snapshot (cdc_data_latest.xlsx)
-├── 📁 backup_folder/       → Archives processed raw files safely
-│
-├── 🐍 cdc_script.py        → Main automation script
-└── 📘 README.md            → Documentation (this file)
+<img width="831" height="276" alt="image" src="https://github.com/user-attachments/assets/8ec84491-3c0c-45b8-b54c-0e4d4258a0a7" />
 
-🧠 How It Works
+>🧠 How It Works
 
-🩸 Step 1 — (Raw Layer)
+>🩸 Step 1 — (Raw Layer)
+
 Drop your latest Excel file into the raw_folder/.
 Each file must contain:
 ID, Statusflag (I, U, D), and Timestamp columns.
@@ -40,13 +33,15 @@ Example:
 | 1  | John Smith   | [john@email.com](mailto:john@email.com)   | U          | 2025-11-03 14:30:00 |
 | 2  | Priya Sharma | [priya@email.com](mailto:priya@email.com) | I          | 2025-11-04 09:15:00 |
 
-🧾 Step 2 — (Historic Layer)
+>🧾 Step 2 — (Historic Layer)
+
 The system appends every incoming record to a single Excel file:
 historic_folder/historic_data.xlsx
 
 🕓 This acts as a full audit trail — nothing is ever deleted here.
 
-🧮 Step 3 — (CDC Layer)
+>🧮 Step 3 — (CDC Layer)
+
 The script merges the new raw data with the existing CDC snapshot:
 
 * Sorts by ID and Timestamp
@@ -56,15 +51,18 @@ The script merges the new raw data with the existing CDC snapshot:
 🟢 Output → cdc_folder/cdc_data_latest.xlsx
 (always exactly one file, representing the latest state)
 
-🗄️ Step 4 — (Archive Layer)
+>🗄️ Step 4 — (Archive Layer)
+
 After processing, the raw Excel file is timestamped and moved to:
 backup_folder/
 
 Example:
 backup_folder/raw_data_2025_11_05_20251105_144533.xlsx
 
-⚙️ Run Instructions
+>⚙️ Run Instructions
+
 1️⃣ Create Environment
+
 bash
 python -m venv venv
 source venv/bin/activate       # macOS/Linux
@@ -73,19 +71,22 @@ venv\Scripts\activate          # Windows
 
 
 2️⃣ Install Dependencies
+
 bash
 pip install pandas openpyxl
 
 3️⃣ Run Script
+
 bash
 python cdc_script.py
 
 4️⃣ Check Outputs
+
 * 📜 historic_folder/historic_data.xlsx → all event history
 * 📊 cdc_folder/cdc_data_latest.xlsx → latest snapshot
 * 📦 backup_folder/ → archived raw file
 
-🧩 CDC Logic Explained
+>🧩 CDC Logic Explained
 
 | Flag | Meaning | Behavior in CDC Layer             |
 | ---- | ------- | --------------------------------- |
@@ -93,13 +94,14 @@ python cdc_script.py
 | U    | Update  | Old record replaced with new data |
 | D    | Delete  | Record removed from CDC snapshot  |
 
-🧾 Example Output Summary
+>🧾 Example Output Summary
 
 📂 Using latest raw file: raw_folder/raw_data_2025_11_05.xlsx
 🕓 Historic layer updated: historic_folder/historic_data.xlsx
 ✅ CDC layer updated: cdc_folder/cdc_data_latest.xlsx
 
-📊 Change Summary:
+>📊 Change Summary:-
+
   Inserted: 3 records
   Updated: 4 records
   Deleted: 1 records
@@ -116,36 +118,37 @@ python cdc_script.py
 | 📘 OpenPyXL   | Excel I/O operations        |
 | 🧰 OS, Shutil | File and folder management  |
 
-✅ Key Advantages
+>✅ Key Advantages
+
 * 🧾 Transparent, human-readable Excel pipeline
 * 🔁 Maintains both historic & current datasets
 * 💾 Automatically handles backup and cleanup
 * 🧠 Simple, modular, and Airflow-ready
 * 🌍 Cross-platform and lightweight
 
-⚠️ Limitations
+>⚠️ Limitations
+
 * ❌ Not suitable for very large datasets (>100K rows)
 * ❌ Sequential file processing only (single-threaded)
 * ❌ No inbuilt data validation — assumes clean input
 * ❌ Excel-based I/O can slow down large ETL workloads
 
-🚀 Future Enhancements
+>🚀 Future Enhancements
+
 * 🧮 Add cdc_run_log.xlsx to capture run stats
 * ⏰ Integrate with Apache Airflow for scheduling
 * 🗃️ Upgrade to SQL/Delta Lake storage
 * 🧩 Add schema validation & data quality checks
 * 📈 Include dashboard/reporting module
 
-🏷️ Repository Info
-Name: excel-cdc-automation
-Tagline:
-> 🧩 A Python-based Change Data Capture (CDC) pipeline for Excel — tracks inserts, updates, and deletes to maintain historic and current snapshots automatically. ⚙️📊
 
-👨‍💻 Author:-
+>👨‍💻 Author:-
+
 Yelleti Sudheer Kumar
 💼 Data Engineering Enthusiast | ETL | Python | Airflow
-📧 [raj.kumar@email.com](sudheeryelleti@gmail.com)
+📧 sudheeryelleti@gmail.com
 
-🌟 Support
+>🌟 Support:-
+
 If you like this project, please ⭐ star the repository — it helps others discover it!
 Contributions and suggestions are always welcome 💬

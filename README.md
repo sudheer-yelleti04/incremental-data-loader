@@ -53,10 +53,10 @@ The script merges the new raw data with the existing CDC snapshot:
 >🗄️ Step 4 — (Archive Layer)
 
 After processing, the raw Excel file is timestamped and moved to:
-backup_folder/
+archived_folder/
 
 Example:
-backup_folder/raw_data_2025_11_05_20251105_144533.xlsx
+archived_folder/raw_data_2025_11_05_20251105_144533.xlsx
 
 >⚙️ Run Instructions
 
@@ -83,7 +83,7 @@ python cdc_script.py
 
 * 📜 historic_folder/historic_data.xlsx → all event history
 * 📊 cdc_folder/cdc_data_latest.xlsx → latest snapshot
-* 📦 backup_folder/ → archived raw file
+* 📦 archived_folder/ → archived raw file
 
 >🧩 CDC Logic Explained
 
@@ -105,7 +105,7 @@ python cdc_script.py
   Updated: 4 records
   Deleted: 1 records
 
-📦 Moved raw file to backup: backup_folder/raw_data_2025_11_05_20251105_144533.xlsx
+📦 Moved raw file to backup: archived_folder/raw_data_2025_11_05_20251105_144533.xlsx
 🎯 CDC + Historic process completed successfully!
 
 🛠️ Technologies Used

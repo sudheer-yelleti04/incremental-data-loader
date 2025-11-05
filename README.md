@@ -100,7 +100,7 @@ python cdc_script.py
 🕓 Historic layer updated: historic_folder/historic_data.xlsx
 ✅ CDC layer updated: cdc_folder/cdc_data_latest.xlsx
 
->📊 Change Summary:-
+>📊 Change Summary
 
   Inserted: 3 records
   Updated: 4 records
@@ -142,13 +142,13 @@ python cdc_script.py
 * 📈 Include dashboard/reporting module
 
 
->👨‍💻 Author:-
+>👨‍💻 Author
 
 Yelleti Sudheer Kumar
 💼 Data Engineering Enthusiast | ETL | Python | Airflow
 📧 sudheeryelleti@gmail.com
 
->🌟 Support:-
+>🌟 Support
 
 If you like this project, please ⭐ star the repository — it helps others discover it!
 Contributions and suggestions are always welcome 💬

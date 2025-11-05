@@ -13,9 +13,9 @@ It helps track evolving datasets, detect changes, and keep both:
 
 Designed as a lightweight, Excel-based CDC framework — great for ETL learning, PoC pipelines, and Airflow DAG prototyping.
 
-🏗️ Folder Structure
+>🏗️ Folder Structure
+<img width="843" height="276" alt="image" src="https://github.com/user-attachments/assets/7cde9ee6-cd60-4401-9110-afe3e1fa634c" />
 
-<img width="831" height="276" alt="image" src="https://github.com/user-attachments/assets/8ec84491-3c0c-45b8-b54c-0e4d4258a0a7" />
 
 >🧠 How It Works
 

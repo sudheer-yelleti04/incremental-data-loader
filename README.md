@@ -1,17 +1,18 @@
->🧩 Excel CDC Automation ⚙️
+🧩 Change Data Capture (CDC) Automation System
 
-🔁 A Python-based Change Data Capture (CDC) pipeline that tracks Insert (I), Update (U), and Delete (D) operations from Excel files.
-📊 Automatically maintains a Historic Layer for all events, a CDC Layer for the latest snapshot, and archives processed raw files into a Archive Layer.
+>📘 Project Description
 
->🪄 Project Overview
+This project automates a Change Data Capture (CDC) pipeline using Python and Excel files — ideal for small to mid-scale data engineering use cases or prototyping CDC before moving to a database or Airflow environment.
 
-This project demonstrates a Change Data Capture (CDC) workflow using Python + Pandas + Excel.
-It helps track evolving datasets, detect changes, and keep both:
+The pipeline reads new raw data files (Excel), tracks changes using Status Flags (I, U, D) and Timestamps, and maintains:
 
-* 🕓 A Historic log of all past changes
-* 🧮 A CDC layer containing only the most recent valid records
+a CDC Layer (latest snapshot)
 
-Designed as a lightweight, Excel-based CDC framework — great for ETL learning, PoC pipelines, and Airflow DAG prototyping.
+a Historic Layer (complete history of all events)
+
+a Backup Layer (archive of processed raw files)
+
+Each new raw file is automatically processed, appended to history, compared against existing data, and the latest CDC snapshot is updated.
 
 >🏗️ Folder Structure
 <img width="843" height="276" alt="image" src="https://github.com/user-attachments/assets/7cde9ee6-cd60-4401-9110-afe3e1fa634c" />

@@ -1,4 +1,4 @@
-🧩 Change Data Capture (CDC) Automation System
+Change Data Capture (CDC) Automation System
 
 >📘 Project Description
 
